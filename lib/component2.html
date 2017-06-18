@@ -1,0 +1,36 @@
+<dom-module id='component-two'>
+  <template>
+    <style>
+      paper-material {
+        display:block;
+        background-color: white;
+        padding:1em;
+      }
+      .foot {
+        background-color:#f6f6f6;
+        @apply --layout-horizontal;
+        @apply --layout-end-justified;
+        padding:1em;
+      }
+    </style>
+    <paper-material>
+      <h3>This is module two</h2>
+        <p>
+          A new module was loaded. Click on the button below to return to the first page.
+        </p>
+        <div class='foot'>
+          <paper-fab icon='arrow-back' on-click='goBack'></paper-fab>
+        </div>
+    </paper-material>
+    <paper-dialog id='confirmDlg'>
+      <h2>Please confirm</h2>
+      <p>
+        Are you sure you want to go back ?
+      </p>
+      <div class='buttons'>
+        <paper-button dialog-dismiss>Cancel</paper-button>
+        <paper-button dialog-confirm on-click='goOn'>Ok</paper-button>
+      </div>
+    <paper-dialog>
+  </template>
+</dom-module>

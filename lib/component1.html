@@ -1,0 +1,76 @@
+<dom-module id='component-one'>
+  <template>
+    <style>
+      :host {
+        display:block;
+        position:absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        top:0;
+        background-color: #e6e6e6;
+        font-family: roboto;
+        overflow: hidden;
+      }
+
+      neon-animated-pages {
+        @apply --layout-flex;
+        margin:1em;
+        overflow: hidden;
+      }
+
+      paper-button {
+        background:  white;
+      }
+      app-toolbar {
+        background: var(--paper-indigo-500);
+        color:white;
+        height:60px;
+      }
+
+      .main {
+        position:absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        top:0;
+        overflow:hidden;
+        @apply --layout-vertical;
+      }
+
+      paper-spinner {
+        --paper-spinner-layer-1-color:white;
+        --paper-spinner-layer-2-color:white;
+        --paper-spinner-layer-3-color:white;
+        --paper-spinner-layer-4-color:white;
+        margin-right:1em;
+      }
+      app-toolbar div {
+        @apply --layout-flex;
+      }
+    </style>
+    <paper-styles></paper-styles>
+    <div class='main'>
+
+      <app-toolbar></paper-spinner><div>Welcome to polymerize</div><paper-spinner active='[[loading]]'></app-toolbar>
+
+      <neon-animated-pages attr-for-selected='page-name' selected='{{currentPage}}' entry-animation='slide-from-bottom-animation' exit-animation='fade-out-animation' >
+        <neon-animatable page-name='empty-page'>
+        </neon-animatable>
+        <neon-animatable page-name='first-page' >
+          <p>
+            The main application module has been loaded. Click on the button to switch to the next one.
+          </p>
+          <paper-button raised on-click='loadTwo'> Load Next Module </paper-button>
+        </neon-animatable>
+        <neon-animatable page-name='second-page'>
+          <dom-if if='[[module2Loaded]]'>
+            <template>
+              <component-two on-go-back='toFirst'></component-two>
+            </template>
+          </dom-if>
+        </neon-animatable>
+      </neon-animated-pages>
+    </div>
+  </template>
+</dom-module>

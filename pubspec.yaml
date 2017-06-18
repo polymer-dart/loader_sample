@@ -1,0 +1,18 @@
+name: loader_sample
+version: 1.0.0
+dependencies:
+ polymerize: ^0.9.1
+ polymer_element: ^2.0.4
+ html5 : ^0.1.4
+ polymer_elements:
+  git:
+    url: https://github.com/polymer-dart/polymerize_elements.git
+    ref: v0.4.1
+
+transformers:
+ - polymerize:
+    entry-point: web/*.dart
+web:
+ compiler:
+   debug: dartdevc
+   release: dartdevc
