@@ -12,6 +12,9 @@ dependencies:
 transformers:
  - polymerize:
     entry-point: web/*.dart
+dependency_overrides:
+  polymerize:
+    path: ../polymerize
 web:
  compiler:
    debug: dartdevc
