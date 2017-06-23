@@ -1,9 +1,7 @@
-import 'package:loader_sample/module2.dart';
+@entryPoint
 import 'package:polymer_element/polymer_element.dart';
+// ignore: UNUSED_IMPORT
+import 'package:loader_sample/component2.dart';
 
-@init
-void startModule2() {
-  print("Module 2 started");
-}
 
 main(List<String> args) {}

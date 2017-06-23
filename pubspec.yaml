@@ -1,7 +1,7 @@
 name: loader_sample
-version: 1.0.0
+version: 1.0.1
 dependencies:
- polymerize: ^0.9.1
+ polymerize: ^0.9.3
  polymer_element: ^2.0.4
  html5 : ^0.1.4
  polymer_elements:
@@ -12,9 +12,13 @@ dependencies:
 transformers:
  - polymerize:
     entry-point: web/*.dart
-dependency_overrides:
-  polymerize:
-    path: ../polymerize
+#dependency_overrides:
+#   polymer_element:
+#     path: ../polymer_element
+#  polymerize:
+#    path: ../polymerize
+#  polymerize_common:
+#    path: ../polymerize_common
 web:
  compiler:
    debug: dartdevc
